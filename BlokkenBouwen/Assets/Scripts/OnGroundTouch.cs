@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class OnGroundTouch : MonoBehaviour
 {
-   
+    Renderer rend;
+    public Material Block_Death;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+         
+        rend = GetComponent<Renderer>();
         
     }
 
@@ -32,6 +33,7 @@ public class OnGroundTouch : MonoBehaviour
         SpawnBlock _mainScript = camera.GetComponent<SpawnBlock>();
         //scr_Enemy enemyScript = enemy.GetComponent<scr_Enemy>();
         _mainScript.GameOver = true;
+        rend.material = Block_Death;
 
     }
 
